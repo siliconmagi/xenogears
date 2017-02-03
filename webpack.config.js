@@ -1,18 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
+const { entry, output, plugins } = require('./pylon');
 
 module.exports = {
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/dev-server',
-    './src/index.tsx'
-  ],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/dist/',
-    filename: 'bundle.js'
-  },
-
+  entry,
+  plugins,
+  output,
   module: {
     rules: [
       {
@@ -35,11 +28,4 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
-  devServer: {
-    hot: true, 
-    contentBase: './src',
-  }
 }
