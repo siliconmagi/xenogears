@@ -5,8 +5,8 @@
 	"main": "webpack.config.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev1": "NODE_ENV=development && webpack-dev-server --progress --inline --hot --content-base src/",
-		"dev": "NODE_ENV=development && node gateway.js",
+		"dev": "NODE_ENV=development && webpack-dev-server --progress --inline --hot --content-base src/",
+		"dev1": "NODE_ENV=development && node gateway.js",
 		"prod1": "NODE_ENV=production webpack --config ./webpack.config.js",
 		"prod": "NODE_ENV=production webpack",
 		"prod2": "NODE_ENV=production webpack --progress --display-modules --display-chunks -v"
@@ -23,6 +23,7 @@
 		"babel-loader": "^6.2.10",
 		"babel-plugin-inferno": "^1.7.0",
 		"babel-preset-es2015": "^6.22.0",
+		"babel-preset-stage-0": "^6.22.0",
 		"babel-preset-stage-3": "^6.22.0",
 		"clean-webpack-plugin": "^0.1.15",
 		"copy-webpack-plugin": "^4.0.1",
@@ -33,11 +34,18 @@
 		"tslint": "^4.4.2",
 		"typescript": "^2.1.5",
 		"webpack": "^2.2.1",
+		"webpack-bundle-analyzer": "^2.2.1",
+		"webpack-closure-compiler": "^2.1.3",
 		"webpack-dev-server": "2.2.1"
 	},
 	"dependencies": {
+		"amazon-cognito-identity-js": "https://github.com/aws/amazon-cognito-identity-js",
 		"history": "^4.5.1",
 		"inferno": "^1.2.2",
-		"inferno-router": "^1.2.2"
+		"inferno-compat": "^1.2.2",
+		"inferno-component": "^1.2.2",
+		"inferno-mobx": "^1.2.2",
+		"inferno-router": "^1.2.2",
+		"mobx": "^3.0.2"
 	}
 }
